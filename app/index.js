@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
+import App from './containers/App/index.js'
 
 const root = document.getElementById('content')
 
-render(<div className="stuff">Hello!</div>, root)
+render(<App></App>, root)
