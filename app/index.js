@@ -4,4 +4,4 @@ import App from './containers/App/index.js'
 
 const root = document.getElementById('content')
 
-render(<App></App>, root)
+render(<App />, root)
