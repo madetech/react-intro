@@ -1,26 +1,24 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Film from '../../components/Film'
 import films from './films.json'
+import { fetchRandomFilm } from '../../actions/films'
 
+@connect(state => ({ films: state.films }))
 export default class App extends React.Component {
-  constructor (...args) {
-    super(...args)
-    this.state = { index: 0 }
-  }
-
-  randomFilm () {
-    this.setState({ index: this.state.index + 1 })
+  getRandomFilm () {
+    this.props.dispatch(fetchRandomFilm())
   }
 
   render () {
     return (
       <section>
         <Film
-          imageURL={films[this.state.index].Poster}
-          title={films[this.state.index].Title}
+          imageURL={this.props.films.film.Poster}
+          title={this.props.films.film.Title}
         />
 
-        <button onClick={::this.randomFilm}>
+        <button onClick={::this.getRandomFilm}>
           New Film
         </button>
       </section>
