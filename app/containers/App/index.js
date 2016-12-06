@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Film from '../../components/Film'
-import films from './films.json'
 import { fetchRandomFilm } from '../../actions/films'
 
 @connect(state => ({ films: state.films }))
